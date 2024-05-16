@@ -1,0 +1,1 @@
+Preprocessing: convert to uppercase and replace non-alphabetic characters with spaces
