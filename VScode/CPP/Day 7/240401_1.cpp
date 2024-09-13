@@ -27,7 +27,7 @@ public:
     }
 };
 
-int findIndex(Wordcnt *w[100], int cnt, string word)
+int findIndex(Wordcnt *w[100], int cnt, string word) // Wordcnt& w[100]으로 변경가능 일반 변수로써 사용이 가능해진다.
 {
     for (int i = 0; i < cnt; i++)
     {
@@ -41,7 +41,7 @@ int main()
 {
     Wordcnt *w[100];
     int cnt = 0;
-    string s = "I,love-c++ I'Hate[Python Hell/C++ C++"; // 알고리즘 상에는 문제가없지만 전처리 과정이 무조건 필요함
+    string s = "I,love-c++ I'Hate[Python Hello/C++ C++"; // 알고리즘 상에는 문제가없지만 전처리 과정이 무조건 필요함
     // 대문자나 소문자로 통일시켜야함.
     for (int j = 0; j < s.length(); j++)
     {

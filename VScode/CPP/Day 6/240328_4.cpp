@@ -4,11 +4,15 @@ using namespace std;
 
 int main()
 {
+    string word[10];
     string s;
     cout << "여러 줄의 문자열을 입력 하세요" << endl;
     getline(cin, s, '\n'); // string 입력받고 s에 저장
-    int s_idx;
 
+    int s_idx;
+    int idx;
+
+    idx = 0;
     s_idx = 0; // start index = 0;
     while (true)
     {
@@ -18,38 +22,58 @@ int main()
             string part = s.substr(s_idx);
             if (part == "")
                 break;
-            cout << part << endl;
+            word[idx] = part;
+            idx++;
             break;
         }
         int len = f_idx - s_idx;
         string part = s.substr(s_idx, len); // 공백 전까지의 문자를 따로 저장
-        cout << part << endl;
+        word[idx] = part;
+        idx++;
+
         s_idx = f_idx + 1;
-        Wordcnt(part);
+        // Wordcnt(part);
+    }
+    string a[10];
+    int cnt = 0;
+    int i = 0;
+    int k = 0;
+    while (word[i] == '\n')
+    {
+        while (a[k] == '\n')
+        {
+            if (a.find(word[i]))
+            {
+                break;
+            }
+            else
+            {
+                a[k] = word[i];
+            }
+        }
+    }
+    i = 0;
+    while (a[i])
+    {
+        cout << a[i] << endl;
     }
 }
-class Wordcnt
-{
-    Wordcnt *w[10];
-    string word;
-    int cnt = 0;
+// public:
+//     Wordcnt(string word)
+//     {
+//         for(int = 0; i < 10; i++) {
+//             if (w[i] == word)
 
-public:
-    Wordcnt(string word)
-    {
-        for(int = 0; i < 10; i++) {
-            if (w[i] == word)
-            
-        }
-        this->word = word;
-    //    this->cnt = cnt;
-        w[cnt] = word;
-        cnt++;
-    }
-    void increase() { cnt++; }
-    int equalString(string word) {return this -> word == word;}
-    void show() { cout << word << ":" << cnt << endl;}
-};
+//         }
+//         this->word = word;
+//     //    this->cnt = cnt;
+//         w[cnt] = word;
+//         cnt++;
+//     }
+//     void increase() { cnt++; }
+//     int equalString(string word) {return this -> word == word;}
+//     void show() { cout << word << ":" << cnt << endl;}
+// };
 
 /*
 idx = findIndex(w, cnt, str);
